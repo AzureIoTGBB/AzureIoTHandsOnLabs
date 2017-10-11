@@ -12,9 +12,9 @@ from iothub_client_args import *
 from random import randint
 
 ##############   values to change  ##############
-deviceID = "rpi-linux"
-deviceKey = "bybawJs/r68197TvqnW3IxP/ZK01Byrh866HuEIOK88="
-iotHubHostName = "diaz-rmpcs82c22.azure-devices.net"  #ex: myiothub.azure-devices.net
+deviceID = ""
+deviceKey = ""
+iotHubHostName = ""  #ex: myiothub.azure-devices.net
 
 ######## put the lat and long of your fav place here ##########
 ######## otherwise we default to the center of the football universe ######

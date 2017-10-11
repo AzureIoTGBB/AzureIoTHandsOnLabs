@@ -70,7 +70,7 @@ The code to read from your DHT22 sensor and post to Azure has been provided as p
 
         cd ~
         git clone –recursive https://github.com/mangu/AzureIoTHandsOnLabs
-        cd AzureIoTHandsOnLabs/Module2
+        cd AzureIoTHandsOnLabs/Module2c
         
 3.	The code is downloaded, now we need to put the details for your specific device, RM-PCS, and (just for fun), location
 4.	edit the lab2.py script with your favorite linux editor.  If you don’t have one, use nano

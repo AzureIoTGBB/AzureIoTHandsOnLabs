@@ -23,7 +23,7 @@ In this series of labs, you will:
 1. Create and navigate the Azure IoT Remote Monitoring Pre-Configured Solution (RM-PCS)
 2. Create a device to read a temperature and humidity sensor and send that data to the RM-PCS for display
 3. Create a Stream Analytics job that looks for ‘high temperature’ alerts and outputs that alert to a queue for further processing
-4. Create an Azure Function that takes that alert, and sends a command to the device to turn on or off an LED depending on the alert condition.
+4. Create an Azure Function that takes that alert, and sends a command to the device to turn on or off an LED (which will be simulated on the console) depending on the alert condition.
     
 At the end of this lab you will have a physical IoT device connected to Wifi, sending telemetry data to Azure IoT, and listening to and responding to commands from Azure.
 
@@ -73,9 +73,9 @@ The code to read from your DHT22 sensor and post to Azure has been provided as p
         cd AzureIoTHandsOnLabs/Module2c
         
 3.	The code is downloaded, now we need to put the details for your specific device, RM-PCS, and (just for fun), location
-4.	edit the lab2.py script with your favorite linux editor.  If you don’t have one, use nano
+4.	edit the lab2c.py script with your favorite linux editor.  If you don’t have one, use nano
 
-        nano lab2.py
+        nano lab2c.py
     
 5. Read through the code, which is well commented, and make sure you understand what it is doing.
 
@@ -97,8 +97,8 @@ The code to read from your DHT22 sensor and post to Azure has been provided as p
 
 8. Save the file.  If you are using nano as the editor, hit CTRL-O, <enter>
 9. Close the file (CTRL-X in nano)
-10. Execute the script   (‘python lab2.py’ from the command prompt)
-11. You should see the DeviceInfo string echo’ed to the screen and sent to the IoTHub, the default "reported properties" sent, and then every 5 seconds, you should see the temperature and humidity (in a JSON string) sent to the IoTHub.  The LED should also briefly flash to indicate we are sending data
+10. Execute the script   (‘python lab2c.py’ from the command prompt)
+11. You should see the DeviceInfo string echo’ed to the screen and sent to the IoTHub, the default "reported properties" sent, and then every 5 seconds, you should see the temperature and humidity (in a JSON string) sent to the IoTHub.  The LED should also briefly flash to indicate we are sending data (which will be simulated on the console)
 12. Congratulations, you’ve connected a physical IoT device to the Azure IoT RM-PCS.  Next we can look at the telemetry, as well as test manually sending a command to the device from the portal, which we will do in the next step
 
 #### Step 4 -  Posting Telemetry data to Azure 
@@ -116,15 +116,15 @@ Now we can take a look at the RM-PCS portal and make sure everything is working 
 
 6. From the Select A Command box, you should see the two commands that we told the RM-PCS we support via the DeviceInfo message we sent from the device, “ON”, and “OFF”.
 -
-7. Choose “ON” from the drop down and choose “Send Command”.  The LED on the device should light, and you should see this message appear in your RPI console
+7. Choose “ON” from the drop down and choose “Send Command”.  The LED (which will be simulated on the console) on the device should light, and you should see this message appear in your RPI console
 ![Console](/images/m2Console.png)  
-8. Now select the “OFF” command from the drop down and send the command.  Observe the LED turn back off and the corresponding message in the RPI console
+8. Now select the “OFF” command from the drop down and send the command.  Observe the LED (which will be simulated on the console) turn back off and the corresponding message in the RPI console
 
 We used cloud to device messages (C2D) in steps 7 & 8. C2D are great for one way notifications to the device. 
 With C2D, messages will stay in a queue until proccessesed by the device. The time to live of the message is configurable from 1-7 days.
 
-9. Stop lab2.py (Ctrl + X).  Choose “ON” from the drop down and choose “Send Command”.  Notice that the LED on the device does not turn on like it did step 7. This is expected.
-10. Execute the script   (‘python lab2.py’ from the command prompt). The LED on the device should light up without having to resend the command. 
+9. Stop lab2c.py (Ctrl + X).  Choose “ON” from the drop down and choose “Send Command”.  Notice that the LED (which will be simulated on the console) on the device does not turn on like it did step 7. This is expected.
+10. Execute the script   (‘python lab2c.py’ from the command prompt). The LED (which will be simulated on the console) on the device should light up without having to resend the command. 
        
 Congratulations!  You now have a physical IoT device talking to the RM-PCS.  In the next couple of labs, we’ll do some processing of the telemetry data looking for high temperature “alarms” and responding to them.
 

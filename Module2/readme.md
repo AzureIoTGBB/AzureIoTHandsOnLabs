@@ -226,19 +226,6 @@ Congratulations!  You now have a physical IoT device talking to the RM-PCS.  In 
  
 4.	Install Azure IoT Hub device SDK for Python
 
-        cd ~
+        from the command line make sure you CD to module2c's directory and then run:
          
-        git clone –recursive https://github.com/Azure/azure-iot-sdk-python.git
-        
-        cd azure-iot-sdk-python/build_all/linux
-        
-        ./setup.sh
-        
-        ./build.sh (this may not be needed as we are provided a pre compiled copy of the client sd)
-        
-    * To build with python 3.4 or 3.5, run (either or)
-        
-            ./build.sh --build-python 3.4  
-            ./build.sh --build-python 3.5 
-
-
+        pip install azure-iothub-device-client 

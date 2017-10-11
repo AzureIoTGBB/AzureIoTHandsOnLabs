@@ -30,6 +30,7 @@ For the lab hardware, you need at a minimum, a RaspberryPi (2, 3, or ZeroW), a D
 * [Module 1 - Azure IoT Remote Monitoring pre-configured solution](Module1) 
 * [Module 2 - Connect Device to IoT Hub](Module2)
     * [(optional) Module 2b - Connect Device to IoTHub via Gateway](Module2b)
+    * [(optional) Module 2c - An alternative to Module2 for when sensors are not available. This module simulates the sensor data](Module2c)
 * [Module 3 - Azure Stream Analytics](Module3)
 * [Module 4 - Azure Functions](Module4)
 * [Module 5 - Device Management](Module5)
